@@ -1,0 +1,49 @@
+@import "../../../assets/scss/vars.scss";
+
+.search {
+    border-bottom: 1px solid $text-dark;
+    display: flex;
+    padding: 0.5rem 1rem;
+    width: 100%;
+
+    &__form {
+        width: 100%;
+
+        .form-group {
+            background-color: $dark-gray;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0;
+            width: 100%;
+
+            button {
+                background-color: transparent;
+                border: 0px;
+                padding: 0 1rem;
+                outline: 0px;
+
+                svg {
+                    fill: $text-gray;
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+
+            input {
+                background-color: transparent;
+                border: 0px;
+                color: $text-light;
+                font-size: 15px;
+                font-family: Helvetica, sans-serif;
+                outline: 0px;
+                width: 80%;
+
+                &::placeholder {
+                    color: $text-gray;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

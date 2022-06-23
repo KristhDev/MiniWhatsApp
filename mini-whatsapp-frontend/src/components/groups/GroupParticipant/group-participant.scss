@@ -1,0 +1,117 @@
+@import "../../../assets/scss/vars.scss";
+
+.group-participant {
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 2rem;
+    position: relative;
+    transition: background-color 0.1s ease;
+
+    &:hover {
+        background-color: $dark-gray;
+        cursor: pointer;
+
+        .info-participant {
+            .btn-options {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    .img-participant {
+        border-radius: 999px;
+        overflow: hidden;
+        height: 45px;
+        width: 45px;
+        min-width: 45px;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        .img-btn {
+            background-color: $light-green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+
+            svg {
+                height: 20px;
+                width: 20px;
+
+                g {
+                    fill: $text-light;
+                }
+            }
+        }
+    }
+
+    .info-participant {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        margin-left: 1rem;
+        min-width: 56%;
+
+        .name {
+            display: flex;
+            justify-content: space-between;
+
+            span {
+                color: $text-light;
+                font-size: 17px;
+                font-weight: 300;
+            }
+
+            small {
+                align-self: flex-start;
+                background-color: lighten($color: $dark-gray, $amount: 5);
+                border-radius: 5px;
+                font-size: 11.5px;
+                padding: 0.25rem 0.5rem;
+                margin: 0;
+            }
+        }
+
+        small {
+            color: $text-gray;
+            margin-top: 0.4rem;
+        }
+
+        .btn-options {
+            background-color: $dark-gray;
+            border: 0;
+            bottom: 10px;
+            cursor: pointer;
+            height: 28px;
+            position: absolute;
+            transition: opacity 0.1s ease;
+            right: 15px;
+            opacity: 0;
+            outline: none;
+            visibility: hidden;
+            width: 28px;
+            z-index: 5;
+
+            svg {
+                fill: lighten($color: $text-gray, $amount: 5);
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .info-participant-center {
+        align-self: center;
+    }
+}
+
+.react-contexify__scale-right-group-participant {
+    transform-origin: top right !important;
+    width: calc(#{fit-content} + 16px);
+}

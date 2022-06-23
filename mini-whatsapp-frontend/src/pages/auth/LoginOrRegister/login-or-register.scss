@@ -1,0 +1,32 @@
+@import "../../../assets/scss/index.scss";
+@import "../../../assets/scss/vars.scss";
+
+.login-register-screen {
+    display: flex;
+
+    &__wellcome {
+        background-color: #111c24;
+        border-right: 1px solid $linear-gray;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        min-height: calc(100vh - 36px);
+
+        h2 {
+            text-align: center;
+            margin: 2rem 0;
+            font-weight: 600;
+            font-size: 40px;
+        }
+    }   
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+    }
+}

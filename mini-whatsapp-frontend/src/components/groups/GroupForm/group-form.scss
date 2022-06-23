@@ -1,0 +1,116 @@
+@import "../../../assets/scss/vars.scss";
+
+.group-form {
+    height: 100%;
+
+    .form {
+        position: relative;
+        height: calc(100vh - 144px);
+
+        &__group {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: 1rem;
+            margin-right: 1rem;
+
+            input {
+                border-bottom-color: transparent;
+                font-size: 18px;
+                width: 100%;
+
+                &:focus {
+                    border-bottom-color: transparent;
+                }
+
+                &::placeholder {
+                    color: $text-gray;
+                }
+            }
+
+            .img-group {
+                .img-camera {
+                    background-color: rgba($color: $dark-gray, $alpha: 0.9);
+                    opacity: 1;
+                }
+            }
+        }
+
+        .center-img {
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .group-form-group {
+            border-bottom: 2px solid lighten($color: $dark-green, $amount: 15);
+            transition: border-bottom 300ms ease;
+            flex-direction: row;
+
+            .chars {
+                display: flex;
+                align-items: center;
+                padding-right: 0.5rem;
+
+                span {
+                    color: lighten($color: $text-dark, $amount: 10);
+                }
+
+                svg {
+                    margin-left: 0.4rem;
+                    width: 20px;
+                    height: 20px;
+
+                    g {
+                        fill: $text-gray
+                    }
+                }
+            }
+        }
+
+        .group-form-submit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            height: 100px;
+            width: 92%;
+            z-index: 10;
+
+            button {
+                background-color: $light-green;
+                border: 0;
+                border-radius: 999px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 45px;
+                transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+                outline: none;
+                width: 45px;
+                opacity: 0;
+                transform: scale(0.5);
+
+                svg {
+                    margin-top: 0.2rem;
+                    width: 70%;
+                    height: 70%;
+
+                    g {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+
+        .show-btn {
+            button {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+}

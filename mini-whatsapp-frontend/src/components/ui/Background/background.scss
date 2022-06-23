@@ -1,0 +1,70 @@
+@import "../../../assets/scss/vars.scss";
+
+.background {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 4rem 1rem;
+
+    &__image {
+        height: 90px;
+        margin: 0.5rem;
+        max-width: 90px;
+        min-width: 90px;
+        position: relative;
+        width: 90px;
+
+        &:hover {
+            cursor: pointer;
+            border: 4px solid darken($color: $text-gray, $amount: 30);
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            left: 2px;
+            outline: none;
+            position: absolute;
+            top: 2px;
+
+            svg {
+                height: 20px;
+                width: 20px;
+
+                path {
+                    fill: $text-gray;
+                }
+            }
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    &__more {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        height: 90px;
+        justify-content: center;
+        margin: 0.5rem;
+        max-width: 90px;
+        min-width: 90px;
+        border: 4px solid darken($color: $text-gray, $amount: 30);
+        width: 90px;
+
+        svg {
+            fill: darken($color: $text-gray, $amount: 30);
+            height: 70px;
+            width: 70px;
+        }
+    }
+
+    .image-selected {
+        border: 4px solid $text-gray;
+    }
+}

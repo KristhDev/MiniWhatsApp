@@ -1,0 +1,48 @@
+@import "../../../assets/scss/vars.scss";
+
+.img-mask {
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+        .img-camera {
+            opacity: 1;
+        }
+    }
+
+    .img-camera {
+        background-color: rgba($color: darken($color: $dark-gray, $amount: 5), $alpha: 0.7);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+
+        svg {
+            margin-bottom: 1rem;
+            height: 30px;
+            width: 30px;
+        }
+
+        p {
+            color: lighten($color: $text-light, $amount: 15);
+            font-size: 13px;
+            text-align: center;
+            width: 60%;
+        }
+    }
+
+    img {
+        object-fit: cover;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+}

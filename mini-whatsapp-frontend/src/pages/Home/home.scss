@@ -1,0 +1,20 @@
+@import "../../assets/scss/vars.scss";
+
+.home {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-height: calc(100vh - 36px);
+    min-height: calc(100vh - 36px);
+    overflow: hidden;
+
+    &__chats {
+        flex: 1;
+    }
+
+    &__chat {
+        flex: 2.4;
+        background-color: $bg-color;
+        border-left: 1px solid $linear-gray;
+    }
+}

@@ -1,0 +1,86 @@
+@import "../../../assets/scss/vars.scss";
+
+.messages-form {
+    background-color: $darkness;
+    display: flex;
+    justify-content: space-between;
+    height: 63px;
+    position: -ms-page;
+    bottom: -20%;
+    padding: 0 1.5rem;
+    transition: bottom 300ms ease-in-out;
+    width: 100%;
+    z-index: 5;
+
+    button {
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        outline: none;
+
+        svg {
+            height: 22px;
+            width: 22px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+
+        p {
+            color: $text-light;
+            margin-left: 1.5rem;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+
+        button {
+            margin-left: 0.8rem;
+
+            &:disabled {
+                cursor: initial;
+
+                svg {
+                    path {
+                        fill: darken($color: $text-gray, $amount: 10);
+                    }
+                }
+            }
+
+            svg {
+                margin: 0 0.5rem;
+                height: 35px;
+                width: 35px;
+
+                path {
+                    transition: fill 0.3s ease-in-out;
+                    fill: $text-gray;
+                }
+            }
+
+            &:nth-child(2) {
+                svg {
+                    height: 23px;
+                    transform: rotate(180deg);
+                    width: 23px;
+                }
+            }
+        }
+
+        .btn-download {
+            svg {
+                height: 25px;
+                width: 25px;
+            }
+        }
+    }
+}
+
+.show-messages-form {
+    bottom: 0;
+    position: absolute;
+}

@@ -1,0 +1,90 @@
+@import "../../../assets/scss/vars.scss";
+
+.add-description {
+    background-color: $darkness;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.7rem;
+
+    .form {
+        .form__group {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem 1rem;
+
+            .add-description-group {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &:hover {
+                    .pencil-btn {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+
+                button {
+                    background-color: transparent;
+                    margin: 0px;
+                    padding: 0px;
+
+                    svg {
+                        fill: $text-gray;
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+
+                span {
+                    color: $light-green;
+                }
+
+                .input-container {
+                    border-bottom: 2px solid $dark-green;
+                    display: flex;
+                    align-items: center;
+                    transition: border-bottom 300ms ease;
+                    width: 100%;
+
+                    input {
+                        border-bottom-color: transparent;
+                        font-size: 17px;
+                        padding-left: 0px;
+                        width: 100%;
+
+                        &:disabled {
+                            border-bottom-color: $darkness;
+                        }
+
+                        &:focus {
+                            border-bottom-color: transparent;
+                        }
+                    }
+                }
+
+                .input-container-active {
+                    border-bottom-color: $light-green;
+                }
+
+                .description-text {
+                    color: $text-light;
+                    font-size: 16px;
+                }
+
+                .pencil-btn {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+
+            span {
+                color: $text-gray;
+                font-size: 14px;
+
+                &:nth-child(2) {
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+    }
+}

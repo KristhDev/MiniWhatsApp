@@ -1,0 +1,1 @@
+export { BadgeParticipant } from './BadgeParticipant';

@@ -1,0 +1,222 @@
+@import "../../../assets/scss/vars.scss";
+
+.element__search {
+    border-bottom: 1px solid $dark-gray;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    width: 100%;
+
+    .field {
+        background-color: $dark-gray;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        width: 100%;
+
+        input {
+            background-color: transparent;
+            border: 0;
+            color: $text-light;
+            font-size: 18px;
+            margin: 0;
+            outline: none;
+            width: 100%;
+        }
+
+        button {
+            background-color: transparent;
+            border: 0;
+            cursor: pointer;
+            margin-right: 0.5rem;
+            outline: none;
+
+            svg {
+                g {
+                    path {
+                        fill: $text-gray;
+                    }
+                }
+            }
+        }   
+    }
+}
+
+.element-list {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    .list {
+        position: relative;
+        overflow-x: auto;
+        max-height: 220px;
+        min-height: 220px;
+
+        &::-webkit-scrollbar {
+            background-color: $darkness;
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-button:increment, &::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        &::-webkit-scrollbar:horizontal {
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba($color: darken($color: $text-gray, $amount: 25), $alpha: 0.4);
+        }
+
+        .element-item {
+            transition: background-color 0.1s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                background-color: darken($color: $dark-gray, $amount: 2);
+            }
+
+            &__checkbox {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+
+                input {
+                    display: none;
+
+                    & + label::before {
+                        content: "";
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 2px;
+                        float: left;
+                        cursor: pointer;
+                        border: 2px solid $text-light;
+                        background: transparent;
+                    }
+
+                    &:checked + label, &:disabled + label {
+                        &::before {
+                            background-color: $light-green;
+                            border-color: $light-green;
+                        }
+
+                        &::after {
+                            content: "";
+                            width: 10px;
+                            height: 5px;
+                            border: 2px solid black;
+                            margin-left: -14px;
+                            margin-top: 2.5px;
+                            float: left;
+                            border-right: 0;
+                            border-top: 0;
+                            transform: rotate(-55deg);
+                        }
+                    }
+                }
+            }
+
+            &__image {
+                border-radius: 999px;
+                overflow: hidden;
+                height: 50px;
+                width: 50px;
+                min-width: 50px;
+
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            &__content {
+                border-top: 1px solid $linear-gray;
+                padding: 1.4rem 1rem 1.4rem 0;
+                margin-left: 1rem;
+                width: 100%;
+
+                p {
+                    color: $text-light;
+                    font-weight: 600;
+                    font-size: 16px;
+                    margin: 0;
+                    text-align: start;
+                }
+
+                small {
+                    color: $text-gray;
+                    font-size: 13.5px;
+                    display: block;
+                    margin-top: 0.3rem;
+                    text-align: start;
+                }
+            }
+        }
+
+        .active-content {
+            p, small {
+                color: gray;
+            }
+
+            small {
+                font-style: italic;
+            }
+        }
+    }
+
+    .actions {
+        background-color: $dark-gray;
+        bottom: 0;
+        padding: 1.2rem;
+        position: relative;
+        transition: bottom 300ms ease-in-out;
+        width: 100%;
+
+        p {
+            color: $text-light;
+            font-size: 16px;
+            text-align: start;
+            width: 100%;
+        }
+
+        button {
+            background-color: $light-green; 
+            border: 0;
+            border-radius: 999px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 58px;
+            position: absolute;
+            transform: scale(0.5);
+            opacity: 0;
+            transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+            right: 2rem;
+            top: -1.8rem;
+            outline: none;
+            width: 58px;
+
+            svg {
+                height: 38px;
+                width: 38px;
+                margin-left: 0.2rem;
+
+                g {
+                    fill: white;
+                }
+            }
+        }
+
+        .show-btn {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}

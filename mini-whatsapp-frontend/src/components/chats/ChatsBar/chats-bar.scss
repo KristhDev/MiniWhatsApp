@@ -1,0 +1,25 @@
+@import "../../../assets/scss/vars.scss";
+
+.chats-bar {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 155px);
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        background-color: $darkness;
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-button:increment, &::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    &::-webkit-scrollbar:horizontal {
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba($color: darken($color: $text-gray, $amount: 25), $alpha: 0.4);
+    }
+}

@@ -1,0 +1,116 @@
+@import "../../../assets/scss/vars.scss";
+
+.message-info {
+    background-color: $darkness;
+    border-left: 1px solid $linear-gray;
+    height: 100%;
+    overflow: hidden;
+    min-width: 100%;
+
+    &__container {
+        background-size: cover;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
+        display: flex;
+        padding: 1.4rem 1rem;
+        justify-content: flex-end;
+
+        .message {
+            background-color: $dark-green;
+            border-radius: 10px;
+            border-top-right-radius: 0px;
+            position: relative;
+            margin-right: 0.7rem;
+            z-index: 2;
+
+            .content {
+                color: $text-light;
+                font-size: 15px;
+                display: flex;
+                justify-content: space-between;
+                margin: 0.6rem;
+
+                p {
+                    max-width: 85%;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+
+                small {
+                    color: $text-gray;
+                    display: block;
+                    text-align: end;
+                    align-self: flex-end;
+                    font-size: 11px;
+                    margin-left: 1rem;
+                    min-width: 15%;
+                }
+            }
+
+            .image {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                margin: 0.2rem;
+                width: 300px;
+
+                img {
+                    border-radius: 10px;
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            .content-image {
+                bottom: 0.2rem;
+                position: absolute;
+                right: 0.2rem;
+            }
+
+            &::after {
+                border-radius: 4px; 
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-top: 15px solid $dark-green;
+                content: "";
+                height: 0;
+                position: absolute;
+                right: -9px;
+                top: 0;
+                width: 0; 
+                z-index: -1;
+            }
+        }
+    }
+
+    &__data {
+        background-color: $darkness;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+        padding: 1.5rem;
+        margin-top: 0.8rem;
+
+        .data {
+            &:first-child {
+                padding-top: 0.2rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid $linear-gray;
+            }
+
+            &:last-child {
+                padding-top: 1rem;
+                padding-bottom: 0.2rem;
+            }
+
+            h3 {
+                color: $text-light;
+                font-weight: normal;
+            }
+
+            p {
+                color: $text-gray;
+                font-size: 15px;
+                margin-top: 0.3rem;
+            }
+        }
+    }
+}

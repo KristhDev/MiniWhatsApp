@@ -1,0 +1,15 @@
+@import "../../../assets/scss/index.scss";
+@import "../../../assets/scss/vars.scss";
+
+.login-form {
+    width: 100%;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .form {
+        width: 100%;
+    }
+}

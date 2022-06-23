@@ -1,0 +1,46 @@
+@import "../../../assets/scss/vars.scss";
+
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-bottom: 8rem;
+    width: 100%;
+
+    .app-logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .progress-bar {
+        background-color: $dark-gray;
+        position: relative;
+        height: 4px;
+        width: 40%;
+    }
+
+    .progress {
+        background-color: lighten($color: $dark-green, $amount: 10);
+        position: absolute;
+        height: 100%;
+        transition: width 0.5s ease-in-out;
+        width: 0%;
+    }
+
+    .progress-full {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-top: 2rem;
+    }
+}

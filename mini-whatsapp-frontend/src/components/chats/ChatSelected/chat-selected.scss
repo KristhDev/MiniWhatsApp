@@ -1,0 +1,56 @@
+@import "../../../assets/scss/vars.scss";
+
+.chat-selected {
+    display: flex;
+    height: 100%;
+
+    .chat-content {
+        position: relative;
+        min-width: 100%;
+        height: 100%;
+        transition: min-width 0.3s ease;
+    }
+
+    .chat-info {
+        min-width: 41.82%;
+        height: 100%;
+
+        &__header {
+            background-color: $dark-gray;
+            border-left: 1px solid $linear-gray;
+            color: $text-light;
+            display: flex;
+            align-items: center;
+            height: 65px;
+
+            button {
+                background-color: transparent;
+                border: 0px;
+                margin: 0 2rem;
+                color: $text-light;
+                outline: none;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                svg {
+                    height: 20px;
+                    width: 20px;
+
+                    path {
+                        fill: $text-gray;
+                    }
+                }
+            }
+
+            h3 {
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+.chat-content-suprimed {
+    min-width: 58.18% !important;
+}

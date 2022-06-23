@@ -1,0 +1,98 @@
+@import "../../../assets/scss/vars.scss";
+
+.profile-bar {
+    align-items: center;
+    background-color: $dark-gray;
+    display: flex;
+    height: 65px;
+    width: 100%;
+
+    &__info {
+        align-items: center;
+        display: flex;
+        min-width: max-content;
+
+        .user-img {
+            border-radius: 50%;
+            cursor: pointer;
+            height: 40px;
+            margin-left: 10px;
+            overflow: hidden;
+            width: 40px;
+
+            img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .user-loader {
+            margin-left: 1rem;
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 1rem;
+
+            span {
+                color: $text-light;
+                cursor: pointer;
+                font-size: 17px;
+                font-weight: bold;
+                display: block;
+                width: 100%;
+            }
+
+            p {
+                color: $text-gray;
+                font-size: 13.5px;
+                text-align: start;
+                margin-top: 0.1rem;
+                width: 100%;
+            }
+        }
+    }
+
+    &__options {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+
+        button {
+            align-items: center;
+            background-color: transparent;
+            border-radius: 50%;
+            border: 0px;
+            display: flex;
+            height: 45px;
+            justify-content: center;
+            margin-right: 1rem;
+            outline: none;
+            padding: 0.8rem;
+            transition: background-color 300ms ease;
+            width: 45px;
+
+            svg {
+                fill: $text-gray;
+                margin-bottom: 0.05rem;
+                height: 18px;
+                width: 18px;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:focus {
+                background-color: lighten($color: $dark-gray, $amount: 6);
+            }
+        }
+    }
+}
+
+.react-contexify__scale-right-profile-bar {
+    transform-origin: top right !important;
+}

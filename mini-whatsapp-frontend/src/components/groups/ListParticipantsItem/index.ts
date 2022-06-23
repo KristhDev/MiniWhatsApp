@@ -1,0 +1,1 @@
+export { ListParticipantsItem } from './ListParticipantsItem';

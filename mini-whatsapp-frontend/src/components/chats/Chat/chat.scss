@@ -1,0 +1,106 @@
+@import "../../../assets/scss/vars.scss";
+
+.chat {
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: height 300ms ease-in-out;
+    position: relative;
+    overflow: hidden;
+
+    .btn-down {
+        position: absolute;
+        right: 65px;
+        bottom: 55px;
+        z-index: 4;
+
+        button {
+            background-color: $dark-gray;
+            border-radius: 999px;
+            border: 0px;
+            text-align: center;
+            position: fixed;
+            outline: 0;
+            transition: transform 0.3s ease, opacity 0.15s ease;
+            height: 42px;
+            width: 42px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            svg {
+                fill: $text-gray;
+                margin-top: 2px;
+                margin-right: 1px;
+                height: 30px;
+                width: 30px;
+            }
+        }
+    }
+
+    .btn-down-hide button {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    &__loader {
+        display: flex;
+        justify-content: center;
+
+        .loader {
+            background-color: $darkness;
+            border-radius: 999px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.65rem;
+            margin: 0.6rem 0;
+
+            div {
+                width: 25px;
+                height: 25px;
+
+                svg {
+                    overflow: visible;
+
+                    g {
+                        g {
+                            path {
+                                stroke-width: 5px;
+                            }
+
+                            circle {
+                                fill: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__messages {
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+        overflow-x: auto;
+        height: 100%;
+
+        &::-webkit-scrollbar {
+            background-color: transparent;
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-button:increment, &::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        &::-webkit-scrollbar:horizontal {
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba($color: darken($color: $text-gray, $amount: 25), $alpha: 0.5);
+        }
+    }
+}

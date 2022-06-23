@@ -1,0 +1,50 @@
+@import "../../../assets/scss/vars.scss";
+
+.help {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__image {
+        margin-top: 1rem;
+        height: 300px;
+        width: 300px;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+        p {
+            color: $text-gray;
+            font-size: 15px;
+            text-align: center;
+        }
+    }
+
+    &__info {
+        margin-top: 5rem;
+        padding: 0 2rem;
+
+        p {
+            color: $text-gray;
+            font-size: 15px;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+
+            i {
+                font-weight: bold;
+            }
+
+            a {
+                color: lighten($color: $dark-green, $amount: 15);
+                font-weight: bold;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

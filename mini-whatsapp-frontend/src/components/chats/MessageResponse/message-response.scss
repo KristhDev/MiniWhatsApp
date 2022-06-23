@@ -1,0 +1,42 @@
+@import "../../../assets/scss/vars.scss";
+
+.message-reponse {
+    background-color: rgba($color: #000000, $alpha: 0.15);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.3rem;
+    overflow: hidden;
+    z-index: 4;
+
+    &__content {
+        flex-direction: column;
+        flex: 1;
+        justify-self: flex-start;
+        padding: 0.5rem;
+
+        b, p {
+            color: lighten($color: $text-gray, $amount: 15);
+            font-size: 12.5px;
+            margin-left: 0.1rem;
+            width: 100%;
+        }
+
+        b {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 0.3rem;
+        }
+    }
+
+    &__image {
+        border-radius: 5px;
+        overflow: hidden;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

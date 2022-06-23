@@ -1,0 +1,249 @@
+@import "../../../assets/scss/vars.scss";
+
+.file-view {
+    background-color: rgba($color: $darkness, $alpha: 0.9);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 999;
+
+    &__chat {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+
+        .chat-info {
+            flex: 1;
+            display: flex;
+            align-items: center;
+
+            &__image {
+                border-radius: 50%;
+                overflow: hidden;
+                height: 45px;
+                min-width: 45px;
+                max-width: 45px;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            &__user {
+                margin-left: 1rem;
+
+                p {
+                    color: $text-light;
+                    font-size: 17px;
+                    width: 100%;
+                }
+
+                small {
+                    display: block;
+                    margin-top: 0.3rem;
+                    font-size: 14px;
+                    color: $text-gray;
+                }
+            }
+
+        }
+
+        .chat-actions {
+            align-items: center;
+            display: flex;
+            padding-right: 0.5rem;
+
+            .btn-m {
+                margin-right: 0.7rem;
+                margin-left: 0.7rem;
+            }   
+
+            .btn-resend {
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+
+            button {
+                align-items: center;
+                background-color: transparent;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                display: flex;
+                height: 45px;
+                justify-content: center;
+                margin-left: 0.7rem;
+                transition: background-color 300ms ease;
+                width: 45px;
+
+                &:focus {
+                    background-color: lighten($color: $dark-gray, $amount: 6);
+                }
+
+                svg {
+                    height: 25px;
+                    width: 25px;
+
+                    path {
+                        fill: $text-gray;
+                    }
+                }
+            }
+        }
+    }
+
+    &__content {
+        align-items: center;
+        display: flex;
+        height: 80%;
+        justify-content: center;
+
+        .btn-container {
+            align-items: center;
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            height: 100%;
+            width: calc(100% / 3);
+
+            .btn-prev, .btn-next {
+                align-items: center;
+                background-color: darken($color: $text-gray, $amount: 30);
+                border-radius: 50%;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                height: 50px;
+                justify-content: center;
+                transition: opacity 0.3s ease;
+                width: 50px;
+
+                svg {
+                    height: 35px;
+                    width: 35px;
+
+                    path {
+                        fill: $text-light;
+                    }
+                }
+            }
+
+            .btn-prev {
+                margin-right: 75%;
+
+                svg {
+                    margin-bottom: 0.2rem;
+                    transform: rotate(90deg);
+                }
+            }
+
+            .btn-next {
+                margin-left: 75%;
+
+                svg {
+                    margin-top: 0.1rem;
+                    transform: rotate(-90deg);
+                }
+            }
+
+            .btn-disabled {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+        }
+
+        .file {
+            display: flex;
+            flex-direction: column;
+            flex: 2;
+            height: 100%;
+            max-width: calc(100% / 3);
+            overflow: hidden;
+
+            img {
+                margin-top: 3rem;
+                height: 100%;
+                max-height: 60vh;
+                object-fit: cover;
+                width: 100%;
+            }
+
+            small {
+                color: $text-gray;
+                font-size: 14px;
+                justify-content: justify;
+                display: block;
+                margin-top: 3rem;
+                margin-bottom: 2rem;
+                width: 100%;
+            }
+        }
+    }
+
+    &__more {
+        border-top: 1px solid $text-dark;
+        display: flex;
+        align-items: center;
+        padding-top: 0.5rem;
+        padding-bottom: 0.4rem;
+        overflow-x: auto;
+        width: 100%;
+
+        .more-item {
+            border-radius: 5px;
+            cursor: pointer;
+            height: 80px;
+            margin: 0.3rem;
+            overflow: hidden;
+            transition: height 0.3s ease, width 0.3s ease, min-width 0.3s ease, min-height 0.3s ease;
+            width: 80px;
+            min-width: 80px;
+            min-height: 80px;
+
+            img {
+                height: 100%;
+                object-fit: cover;
+                width: 100%;
+            }
+
+            &:hover {
+                outline: 3px solid $text-gray;
+            }
+        }
+
+        .more-item-active {
+            outline: 3px solid $text-gray;
+            height: 65px;
+            width: 65px;
+            min-width: 65px;
+            min-height: 65px;
+        }
+
+        &::-webkit-scrollbar {
+            background-color: $darkness;
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-button:increment, &::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        &::-webkit-scrollbar:horizontal {
+            height: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba($color: darken($color: $text-gray, $amount: 25), $alpha: 0.4);
+        }
+    }
+}
+
+.show-file-view {
+    opacity: 1;
+    visibility: visible;
+}

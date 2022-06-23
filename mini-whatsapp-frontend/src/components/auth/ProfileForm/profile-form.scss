@@ -1,0 +1,71 @@
+@import "../../../assets/scss/vars.scss";
+
+.profile-form {
+    .form {
+        .form__group {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                color: lighten($color: $dark-green, $amount: 5);
+                font-weight: 500;
+                font-size: 14px;
+                margin-bottom: 1rem;
+            }
+
+            .input-border {
+                border-bottom-color: $dark-green !important;
+            }
+
+            .input-border-active {
+                border-bottom-color: $light-green !important;
+            }
+
+            .profile-form-group {
+                border-bottom: 2px solid $darkness;
+                display: flex;
+                align-items: center;
+                transition: border-bottom-color 300ms ease;
+
+                input {
+                    font-size: 17px;
+                    padding-left: 0px;
+                    width: 90%;
+                    border-color: transparent;
+
+                    &:disabled, &:focus {
+                        border-bottom-color: transparent;
+                    }
+                }
+
+                span {
+                    color: lighten($color: $text-dark, $amount: 10);
+                    margin-right: 0.5rem;
+                }
+
+                button {
+                    background-color: transparent;
+                    margin: 0px;
+                    padding: 0px;
+
+                    svg {
+                        fill: $text-gray;
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+            }
+
+            small {
+                color: $text-gray;
+                margin-top: 1rem;
+            }
+        }
+
+        .center-img {
+            padding-top: 0.6rem;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+    }
+}

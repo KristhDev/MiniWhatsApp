@@ -1,0 +1,42 @@
+@import "../../../assets/scss/vars.scss";
+
+.btn-action {
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: $dark-gray;
+        cursor: pointer;
+    }
+
+    &:last-child {
+        .btn-action__text {
+            border-bottom: none;
+        }
+    }
+
+    svg {
+        fill: $text-gray;
+        height: 25px;
+        margin: 0 1.5rem;
+        width: 25px;
+
+        g {
+            path {
+                fill: $text-gray;
+            }
+        }
+    }
+
+    &__text {
+        border-bottom: 1px solid $linear-gray;
+        flex: 1;
+
+        p {
+            color: $text-light;
+            font-size: 18px;
+            margin: 1.3rem 0;
+        }
+    }
+}

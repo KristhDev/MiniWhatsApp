@@ -1,0 +1,36 @@
+@import "../../../assets/scss/vars.scss";
+
+.privacy-action {
+    border-bottom: 1px solid $text-dark;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    width: 100%;
+
+    &:last-child {
+        border: none;
+    }
+
+    &__text {
+        p {
+            color: $text-light;
+            font-size: 16px;
+        }
+
+        small {
+            color: $text-gray;
+            font-size: 14px;
+        }
+    }
+
+    &__icon {
+        svg {
+            transform: rotate(-90deg);
+
+            path {
+                fill: $text-gray;
+            }
+        }
+    }
+}

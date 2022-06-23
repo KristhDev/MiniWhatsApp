@@ -1,0 +1,115 @@
+@import "../../../assets/scss/vars.scss";
+
+.list-participants {
+    position: relative;
+    height: calc(100vh - 144px);
+    width: 100%;
+
+    .add-participants {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 2rem 0 2rem;
+        width: 100%;
+    }
+
+    .contacts-search-not-pt {
+        padding-top: 0;
+    }
+
+    .contacts-search {
+        &__not-pt {
+            padding-top: 0;
+        }
+
+        display: flex;
+        justify-content: center;
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+        width: 100%;
+
+        input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid $linear-gray;
+            color: $text-light;
+            font-size: 16px;
+            padding: 0.3rem 0.1rem;
+            outline: none;
+            width: 80%;
+
+            &::placeholder {
+                color: $text-gray;
+            }
+        }
+    }
+
+    .contacts-list {
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        overflow-y: auto;
+        width: 100%;
+
+        &::-webkit-scrollbar {
+            background-color: $darkness;
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-button:increment, &::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        &::-webkit-scrollbar:horizontal {
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba($color: darken($color: $text-gray, $amount: 25), $alpha: 0.4);
+        }
+    }
+
+    .btn-container {
+        background-color: $darkness;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        height: 100px;
+        width: 100%;
+        z-index: 10;
+
+        button {
+            background-color: $light-green;
+            border: 0;
+            border-radius: 999px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 45px;
+            transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+            outline: none;
+            width: 45px;
+            opacity: 0;
+            transform: scale(0.5);
+
+            svg {
+                transform: rotate(180deg);
+
+                g {
+                    path {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .show-btn {
+        button {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}

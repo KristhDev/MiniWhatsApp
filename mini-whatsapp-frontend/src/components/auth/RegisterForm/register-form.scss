@@ -1,0 +1,17 @@
+@import "../../../assets/scss/index.scss";
+@import "../../../assets/scss/vars.scss";
+@import "../../../assets/scss/forms.scss";
+
+.register-form {
+    width: 100%;
+
+    h2 {
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .form {
+        width: 100%;
+    }
+}

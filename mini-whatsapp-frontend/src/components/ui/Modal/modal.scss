@@ -1,0 +1,68 @@
+@import "../../../assets/scss/vars.scss";
+
+.wass-swal-contatiner {
+    margin: 0;
+}
+
+.wass-swal-actions {
+    height: 0;
+    margin: 0;
+    opacity: 0;        
+    visibility: hidden;
+}
+
+.wass-swal-popup {
+    padding-bottom: 0;
+}
+
+.modal {
+    padding: 0;
+    overflow: hidden;
+
+    &__title {
+        background-color: $dark-gray;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        width: 100%;
+
+        h2 {
+            color: $text-light;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        button {
+            background-color: transparent;
+            border: 0;
+            cursor: pointer;
+            margin-left: 0.5rem;
+            margin-right: 1rem;
+            outline: none;
+
+            svg {
+                height: 22px;
+                width: 22px;
+            }
+        }
+    }
+
+    &__content {
+        &::-webkit-scrollbar {
+            background-color: $darkness;
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-button:increment, &::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        &::-webkit-scrollbar:horizontal {
+            height: 8px;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background-color: $bg-color;
+        }
+    }
+}

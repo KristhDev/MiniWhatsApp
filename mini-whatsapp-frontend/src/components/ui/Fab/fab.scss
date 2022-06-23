@@ -1,0 +1,30 @@
+@import "../../../assets/scss/vars.scss";
+
+.fab {
+    align-items: center;
+    border-radius: 50%;
+    bottom: 120%;
+    display: flex;
+    justify-content: center;
+    max-height: 52px;
+    min-height: 52px;
+    min-width: 52px;
+    opacity: 0;
+    position: absolute;
+    right: 89.5%;
+    transform: scale(0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    svg {
+        g {
+            path {
+                fill: #fff !important;
+            }
+        }
+    }
+}
+
+.show-fab {
+    opacity: 1;
+    transform: scale(1);
+}

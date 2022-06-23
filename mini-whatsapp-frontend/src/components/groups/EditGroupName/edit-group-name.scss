@@ -1,0 +1,97 @@
+@import "../../../assets/scss/vars.scss";
+
+.edit-group-name {
+    .form {
+        margin-top: -0.5rem;
+        padding: 0rem 1rem;
+
+        &__group {
+            padding: 0 0.8rem;
+            width: 100%;
+
+            .group-name {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: border-bottom-color 0.3s ease-in-out;
+                width: 100%;
+
+                &:hover {
+                    button {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+
+                h4 {
+                    border-radius: 8px;
+                    font-size: 25px;
+                    font-weight: 300;
+                    padding: 0.38rem 0.75rem;
+
+                    &:hover {
+                        background-color: $dark-gray;
+                    }
+                }
+
+                input {
+                    border-bottom-color: transparent;
+                    font-size: 25px;
+                    padding-left: 0.4rem;
+                    padding-bottom: 0;
+                    width: 100%;
+
+                    &:focus {
+                        border-bottom-color: transparent;
+                    }
+                }
+
+                span {
+                    color: lighten($color: $text-dark, $amount: 10);
+                }
+
+                button {
+                    background-color: transparent;
+                    border: 0px;
+                    outline: none;
+                    margin-top: 0;
+                    margin-left: 0.3rem;
+                    padding: 0;
+                    opacity: 0;
+                    visibility: hidden;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &:disabled {
+                        cursor: initial;
+
+                        svg {
+                            fill: darken($color: $text-gray, $amount: 10);
+                        }
+                    }
+
+                    svg {
+                        fill: $text-gray;
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+
+                .check-submit-btn {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            .group-name-input {
+                border-bottom: 2px solid $dark-green;
+            }
+
+            .group-name-input-active {
+                border-bottom: 2px solid $light-green;
+            }
+        }
+    }
+}

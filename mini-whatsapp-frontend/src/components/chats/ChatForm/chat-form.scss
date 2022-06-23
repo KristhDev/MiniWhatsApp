@@ -1,0 +1,192 @@
+@import "../../../assets/scss/vars.scss";
+
+.chat-form {
+    background-color: $dark-gray;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 4;
+
+    .message-resp {
+        background-color: inherit;
+        display: flex;
+        padding: 0 3.8rem;
+        position: absolute;
+        transition: bottom 300ms ease-in-out;
+        bottom: 0;
+        width: 100%;
+        z-index: -1;
+
+        .message-reponse {
+            width: 100%;
+
+            p {
+                max-width: 63% !important;
+            }
+        }
+
+        button {
+            background-color: transparent;
+            border: 0px;
+            cursor: pointer;
+            outline: none;
+            position: absolute;
+            right: 20px;
+            top: 35%;
+
+            svg {
+                height: 22px;
+                width: 22px;
+
+                path {
+                    fill: $text-gray;
+                }
+            }
+        }
+    }
+
+    .show-message-resp {
+        bottom: 100%;
+    }
+
+    .message-gif {
+        background-color: inherit;
+        bottom: -500%;
+        height: 30vh;
+        position: absolute;
+        transition: bottom 300ms ease;
+        width: 100%;
+        z-index: -1;
+
+        &__show {
+            bottom: 100%;
+        }
+    }
+
+    form {
+        background-color: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        padding: 0.7rem 0;
+
+        .adjunt, .gif {
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            transition: background-color 300ms ease;
+            width: 40px;
+
+            &:focus {
+                background-color: lighten($color: $dark-gray, $amount: 6);
+            }
+
+            svg {
+                height: 22px !important;
+                width: 22px !important;
+
+                g {
+                    height: 18px;
+                    width: 18px;
+                }
+            }
+        }
+
+        .gif {
+            svg {
+                height: 30px !important;
+                width: 30px !important;
+            }
+        }
+
+        .chat-form-group {
+            align-items: center;
+            background-color: lighten($color: $dark-gray, $amount: 5);
+            border-radius: 8px;
+            display: flex;
+            margin-right: 1rem;
+            width: 85%; 
+            padding: 0.7rem 1rem;
+
+            textarea {
+                background-color: transparent;
+                border: 0;
+                color: $text-light;
+                font-size: 16px;
+                font-family: Helvetica, sans-serif;
+                margin-left: 5px;
+                resize: none;
+                outline: none;
+                width: 98%;
+
+                &::-webkit-scrollbar {
+                    background-color: $darkness;
+                    width: 4px;
+                    margin-right: 10px;
+                }
+
+                &::-webkit-scrollbar-button:increment, &::-webkit-scrollbar-button {
+                    display: none;
+                }
+
+                &::-webkit-scrollbar:horizontal {
+                    height: 4px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: rgba($color: darken($color: $text-gray, $amount: 25), $alpha: 0.4);
+                }
+
+                &::placeholder {
+                    color: $text-gray;
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .space {
+            height: 10px;
+            margin-right: 1rem;
+            width: 36px;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            margin-right: 1rem;
+            width: 36px;
+
+            &:disabled {
+                cursor: initial;
+            }
+
+            svg {
+                g {
+                    path {
+                        fill: $text-gray;
+                    }
+                }
+            }
+
+            &[type="submit"] {
+                svg {
+                    width: 36px;
+                    height: 36px;
+                }
+            }
+
+            &[type="button"] {
+                svg {
+                    width: 26px;
+                    height: 26px;
+                }
+            }
+        }
+    }
+}
